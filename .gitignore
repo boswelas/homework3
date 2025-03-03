@@ -1,0 +1,24 @@
+# Exclude all .zip files
+*.zip
+
+# Exclude all .pyc files
+*.pyc
+
+# Do not store image datasets on GitHub!  
+# GitHub may apply compression algorithms that alter pixel values, leading to poor model inference performance  
+*.jpg
+*.png
+*.th
+
+
+# Exclude specific directories
+logs/
+log/
+run/
+runs/
+data/
+classification_data/
+road_data/
+drive_data/
+
+
