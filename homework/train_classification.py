@@ -7,13 +7,13 @@ import torch
 from torchvision import transforms
 import torch.utils.tensorboard as tb
 
-from models import load_model, save_model
-from datasets.classification_dataset import load_data
+from homework.models import load_model, save_model
+from homework.datasets.classification_dataset import load_data
 
 def train(
     exp_dir: str = "logs",
     model_name: str = "classifier",
-    num_epoch: int = 40,
+    num_epoch: int = 50,
     lr: float = 1e-3,
     batch_size: int = 128,
     seed: int = 2024,
@@ -22,6 +22,7 @@ def train(
     
     if torch.cuda.is_available():
         device = torch.device("cuda")
+        print("CUDA running")
     elif torch.backends.mps.is_available() and torch.backends.mps.is_built():
         print("Using MPS")
         device = torch.device("mps")
@@ -117,7 +118,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--exp_dir", type=str, default="logs")
     parser.add_argument("--model_name", type=str, required=True)
-    parser.add_argument("--num_epoch", type=int, default=40)
+    parser.add_argument("--num_epoch", type=int, default=50)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=2024)
 
