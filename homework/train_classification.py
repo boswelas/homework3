@@ -4,7 +4,6 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from torchvision import transforms
 import torch.utils.tensorboard as tb
 
 from homework.models import load_model, save_model
